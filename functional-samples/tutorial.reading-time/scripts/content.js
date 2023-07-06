@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const article = document.querySelector('article');
+// THIS WAS CHANGED FROM THE ORIGINAL SEARCHING FOR BODY INSTEAD OF ARTICLE
+const body = document.querySelector('body');
 
 // `document.querySelector` may return null if the selector doesn't match anything.
-if (article) {
-  const text = article.textContent;
+if (body) {
+  const text = body.textContent;
   /**
    * Regular expression to find all "words" in a string.
    *
@@ -38,9 +39,14 @@ if (article) {
   badge.textContent = `⏱️ ${readingTime} min read`;
 
   // Support for API reference docs
-  const heading = article.querySelector('h1');
+  const heading = body.querySelector('h1');
   // Support for article docs with date
-  const date = article.querySelector('time')?.parentNode;
+  const date = body.querySelector('time')?.parentNode;
+
+  // Apply styles to the badge
+  badge.style.fontFamily = 'Arial, bold';
+  badge.style.fontSize = '12px';
+  badge.style.backgroundColor = 'red';
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
   (date ?? heading).insertAdjacentElement('afterend', badge);
