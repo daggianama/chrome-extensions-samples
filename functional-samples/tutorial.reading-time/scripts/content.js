@@ -45,8 +45,9 @@ if (body) {
 
   // Apply styles to the badge
   badge.style.fontFamily = 'Arial, bold';
-  badge.style.fontSize = '12px';
-  badge.style.backgroundColor = 'red';
+  badge.style.fontSize = '18rem';
+  badge.style.width = 'fit-content';
+  badge.style.backgroundColor = 'rgba(5, 205, 0, 0.5)';
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
   (date ?? heading).insertAdjacentElement('afterend', badge);
